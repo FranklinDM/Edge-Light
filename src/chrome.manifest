@@ -1,0 +1,6 @@
+skin	global			edge-light		chrome/global/
+skin	browser			edge-light		chrome/browser/
+skin	mozapps			edge-light		chrome/mozapps/
+skin	communicator	edge-light		chrome/communicator/
+
+skin	abouthome 		edge-light 		chrome/abouthome/
