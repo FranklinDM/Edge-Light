@@ -49,7 +49,7 @@ ul {
   margin: 4em auto;
   padding: 3em;
   -moz-padding-start: 30px;
-  background: url("chrome://global/skin/icons/warning-large.png") left 0 no-repeat transparent;
+  background: url("chrome://global/skin/icons/no-conn.svg") left 0 no-repeat transparent;
   background-origin: content-box;
 }
 
