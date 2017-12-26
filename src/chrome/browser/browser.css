@@ -1526,12 +1526,8 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   background: transparent;
   background-clip: padding-box;
   padding: 5px 3px 6px;
-  /* Setting a transparent outer border allows us to have a 1px gap
-     between the tabs and the top edge of the screen, even when the
-     tabs have a top margin of 0, which is important for Fitts' law
-     compliance */
-  border-width: 2px 0 0 0;
-  border-style: solid none none none;
+  border-width: 2px 1px 0 0;
+  border-style: solid;
   border-radius: var(--tab-border-radius) var(--tab-border-radius) 0px 0px;
   -moz-border-top-colors: transparent;
   -moz-border-left-colors: transparent;
@@ -1546,6 +1542,16 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   -moz-padding-end: 3px;
 }
 
+.tabbrowser-tab:not([selected]):not(:-moz-lwtheme) {
+  border-image: linear-gradient(transparent 15%, #7a7a7a 15%, #7a7a7a 85%, transparent 85%);
+  border-image-slice: 1;
+}
+
+.tabbrowser-tab[last-visible-tab]:not([selected]):not(:-moz-lwtheme) {
+  border-image: linear-gradient(#7A7A7A 0%, #7A7A7A 100%);
+  border-image-slice: 1;
+}
+
 /* Override the default (globally-set) tab width values; increase
    by 2px to compensate for the transparent outer border of the tabs */
 .tabbrowser-tab:not([pinned]) {
@@ -1553,16 +1559,33 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   min-width: 102px;
 }
 
-.tabbrowser-tab:hover {
+.tabbrowser-tab:hover:not([selected]) {
+  border-image: var(--tab-background-hover) !important;
   background-color: var(--tab-background-hover);
 }
 
-.tabbrowser-tab:hover:active:not([selected="true"]) {
+.tabbrowser-tab[beforehovered]:not([last-visible-tab]) {
+  border-image: var(--tab-background-hover) !important;
+  -moz-border-right-colors: var(--tab-background-hover) !important;
+}
+
+.tabbrowser-tab:hover:not(:-moz-lwtheme):not([selected]) {
+  color: black;
+}
+
+.tabbrowser-tab:hover:active:not([selected]) {
   background-color: var(--tab-background-active);
 }
 
 .tabbrowser-tab[selected="true"] {
   background-color: var(--tab-background-selected);
+  border-image: var(--tab-background-selected);
+  -moz-border-right-colors: var(--tab-background-selected) !important;
+}
+
+.tabbrowser-tab[beforeselected] {
+  border-image: var(--tab-background-selected) !important;
+  -moz-border-right-colors: var(--tab-background-selected) !important;
 }
 
 .tabs-newtab-button:hover {
@@ -1698,11 +1721,6 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   margin-bottom: 1px;
 }
 
-.tabbrowser-arrowscrollbox > .scrollbutton-up:-moz-system-metric(windows-compositor):not(:-moz-lwtheme),
-.tabbrowser-arrowscrollbox > .scrollbutton-down:-moz-system-metric(windows-compositor):not(:-moz-lwtheme) {
-  list-style-image: url(chrome://browser/skin/tabbrowser/tab-arrow-left-glass.png);
-}
-
 toolbar[brighttext] .tabbrowser-arrowscrollbox > .scrollbutton-up,
 toolbar[brighttext] .tabbrowser-arrowscrollbox > .scrollbutton-down {
   list-style-image: url(chrome://browser/skin/tabbrowser/tab-arrow-left-inverted.png);
@@ -1736,11 +1754,6 @@ toolbar[brighttext] .tabbrowser-arrowscrollbox > .scrollbutton-down {
 #TabsToolbar > toolbarpaletteitem > #new-tab-button {
   list-style-image: url(chrome://browser/skin/tabbrowser/newtab.png);
   -moz-image-region: auto;
-}
-
-#TabsToolbar > #new-tab-button:-moz-system-metric(windows-compositor):not(:-moz-lwtheme),
-#TabsToolbar > toolbarpaletteitem > #new-tab-button:-moz-system-metric(windows-compositor):not(:-moz-lwtheme) {
-  list-style-image: url(chrome://browser/skin/tabbrowser/newtab-glass.png);
 }
 
 .tabs-newtab-button:-moz-lwtheme-brighttext,
