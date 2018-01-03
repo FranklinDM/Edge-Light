@@ -73,32 +73,29 @@ a {
 #searchText {
   -moz-box-flex: 1;
   padding: 6px 8px;
-  background: hsla(0,0%,100%,.9) padding-box;
+  background: #fff padding-box;
   border: 1px solid;
-  border-color: hsla(210,54%,20%,.15) hsla(210,54%,20%,.17) hsla(210,54%,20%,.2);
+  border-color: #CCCCCC;
 }
 
 #searchSubmit {
-  -moz-margin-start: -1px;
-  background: linear-gradient(hsla(0,0%,100%,.8), hsla(0,0%,100%,.1)) padding-box;
+  -moz-margin-start: -5px;
+  background: #1E90FF padding-box;
   padding: 0 9px;
   border: 1px solid;
-  border-color: hsla(210,54%,20%,.15) hsla(210,54%,20%,.17) hsla(210,54%,20%,.2);
-  -moz-border-start: 1px solid transparent;
+  border-color: #CCCCCC;
   cursor: pointer;
+  transition: transform 100ms;
+  color: #fff;
 }
 
 #searchSubmit:hover {
-  background-image: linear-gradient(#66bdff, #0d9eff);
-  box-shadow: 0 1px 0 hsla(0,0%,100%,.2) inset,
-              0 0 0 1px hsla(0,0%,100%,.1) inset,
-              0 1px 0 hsla(210,54%,20%,.03),
-              0 0 4px hsla(206,100%,20%,.2);
+  background: #61B1FF;
 }
 
 #searchSubmit:hover:active {
-  box-shadow: 0 1px 1px hsla(211,79%,6%,.1) inset,
-              0 0 1px hsla(211,79%,6%,.2) inset;
+  background: #1B81E5;
+  transform: skew(-2deg, 0deg) scaleX(.97);
 }
 
 #launcher {
@@ -130,8 +127,6 @@ body[narrow] #launcher[session] {
   border: none;
   font-size: 75%;
   cursor: pointer;
-  transition-property: background-color, border-color, box-shadow;
-  transition-duration: 150ms;
 }
 
 body[narrow] #launcher[session] > .launchButton {
@@ -139,11 +134,11 @@ body[narrow] #launcher[session] > .launchButton {
 }
 
 .launchButton:hover {
-  background-color: hsla(0, 0%, 0%, .17);
+  background-color: hsla(0, 0%, 0%, .10);
 }
 
 .launchButton:hover:active {
-  background-color: hsla(0, 0%, 0%, .27);
+  background-color: hsla(0, 0%, 0%, .20);
 }
 
 .launchButton[hidden],
@@ -182,31 +177,31 @@ body[narrow] #restorePreviousSession {
 }
 
 #downloads::before {
-  content: url("chrome://browser/content/abouthome/downloads.png");
+  content: url("chrome://abouthome/skin/launchbuttons.svg#downloads");
 }
 
 #bookmarks::before {
-  content: url("chrome://browser/content/abouthome/bookmarks.png");
+  content: url("chrome://abouthome/skin/launchbuttons.svg#bookmarks");
 }
 
 #history::before {
-  content: url("chrome://browser/content/abouthome/history.png");
+  content: url("chrome://abouthome/skin/launchbuttons.svg#history");
 }
 
 #addons::before {
-  content: url("chrome://browser/content/abouthome/addons.png");
+  content: url("chrome://abouthome/skin/launchbuttons.svg#addons");
 }
 
 #sync::before {
-  content: url("chrome://browser/content/abouthome/sync.png");
+  content: url("chrome://abouthome/skin/launchbuttons.svg#sync");
 }
 
 #settings::before {
-  content: url("chrome://browser/content/abouthome/settings.png");
+  content: url("chrome://abouthome/skin/launchbuttons.svg#preferences");
 }
 
 #restorePreviousSession::before {
-  content: url("chrome://browser/content/abouthome/restore-large.png");
+  content: url("chrome://abouthome/skin/launchbuttons.svg#restore");
   height: 48px;
   width: 48px;
   display: inline-block; /* display on same line as text label */
@@ -220,7 +215,7 @@ body[narrow] #restorePreviousSession {
 }
 
 body[narrow] #restorePreviousSession::before {
-  content: url("chrome://browser/content/abouthome/restore.png");
+  content: url("chrome://abouthome/skin/launchbuttons.svg#restore");
   height: 32px;
   width: 32px;
 }
@@ -232,42 +227,5 @@ body[narrow] #restorePreviousSession::before {
 @media not all and (max-resolution: 1dppx) {
   #brandLogo {
     background-image: url("chrome://branding/content/about-logo@2x.png");
-  }
-
-  .launchButton::before {
-    transform: scale(.5);
-    transform-origin: 0 0;
-  }
-
-  #downloads::before {
-    content: url("chrome://browser/content/abouthome/downloads@2x.png");
-  }
-
-  #bookmarks::before {
-    content: url("chrome://browser/content/abouthome/bookmarks@2x.png");
-  }
-
-  #history::before {
-    content: url("chrome://browser/content/abouthome/history@2x.png");
-  }
-
-  #addons::before {
-    content: url("chrome://browser/content/abouthome/addons@2x.png");
-  }
-
-  #sync::before {
-    content: url("chrome://browser/content/abouthome/sync@2x.png");
-  }
-
-  #settings::before {
-    content: url("chrome://browser/content/abouthome/settings@2x.png");
-  }
-
-  #restorePreviousSession::before {
-    content: url("chrome://browser/content/abouthome/restore-large@2x.png");
-  }
-
-  body[narrow] #restorePreviousSession::before {
-    content: url("chrome://browser/content/abouthome/restore@2x.png");
   }
 }
