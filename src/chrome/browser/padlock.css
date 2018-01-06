@@ -1,0 +1,48 @@
+#padlock-ib, #padlock-ib-left, #padlock-ub-right, #padlock-sb, #padlock-tab {
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+
+#padlock-ib:hover, #padlock-ib-left:hover, #padlock-ub-right:hover, #padlock-sb:hover, #padlock-tab:hover {
+  -moz-image-region: rect(0, 32px, 16px, 16px);
+}
+
+#padlock-ib:hover:active, #padlock-ib-left:hover:active, #padlock-ub-right:hover:active, #padlock-sb:hover:active, #padlock-tab:hover:active {
+  -moz-image-region: rect(0, 48px, 16px, 32px);
+}
+
+#padlock-ib[padshow="ib-trans-bg"][level="ev"],
+#padlock-ib-left[padshow="ib-left"][level="ev"],
+#padlock-ub-right[padshow="ub-right"][level="ev"],
+#padlock-sb[padshow="statbar"][level="ev"],
+#padlock-tab[padshow="tabs-bar"][level="ev"] {
+  list-style-image: url("chrome://browser/skin/identity-icons-padlock-ev.svg") !important;
+}
+
+#padlock-ib[padshow="ib-trans-bg"][level="high"],
+#padlock-ib-left[padshow="ib-left"][level="high"],
+#padlock-ub-right[padshow="ub-right"][level="high"],
+#padlock-sb[padshow="statbar"][level="high"],
+#padlock-tab[padshow="tabs-bar"][level="high"] {
+  list-style-image: url("chrome://browser/skin/identity-icons-padlock.svg") !important;
+}
+
+#padlock-ib[padshow="ib-trans-bg"][level="low"],
+#padlock-ib[padshow="ib-trans-bg"][level="mixed"],
+#padlock-ib-left[padshow="ib-left"][level="low"],
+#padlock-ib-left[padshow="ib-left"][level="mixed"],
+#padlock-ub-right[padshow="ub-right"][level="low"],
+#padlock-ub-right[padshow="ub-right"][level="mixed"],
+#padlock-sb[padshow="statbar"][level="low"],
+#padlock-sb[padshow="statbar"][level="mixed"],
+#padlock-tab[padshow="tabs-bar"][level="low"],
+#padlock-tab[padshow="tabs-bar"][level="mixed"] {
+  list-style-image: url("chrome://browser/skin/identity-icons-padlock.svg") !important;
+}
+
+#padlock-ib[padshow="ib-trans-bg"][level="broken"],
+#padlock-ib-left[padshow="ib-left"][level="broken"],
+#padlock-ub-right[padshow="ub-right"][level="broken"],
+#padlock-sb[padshow="statbar"][level="broken"],
+#padlock-tab[padshow="tabs-bar"][level="broken"] {
+  list-style-image: url("chrome://browser/skin/identity-icons-padlock-broken.svg") !important;
+}

@@ -60,8 +60,12 @@
 
 .search-go-button {
   padding: 1px;
-  list-style-image: url("chrome://global/skin/icons/Search-glass.png");
+  list-style-image: url("chrome://global/skin/icons/search.svg#state");
   -moz-image-region: rect(0px 16px 16px 0px);
+}
+
+toolbar[brighttext] .search-go-button {
+  list-style-image: url("chrome://global/skin/icons/search.svg#state-inverted");
 }
 
 .search-go-button:-moz-locale-dir(rtl) {

@@ -311,7 +311,7 @@ label[disabled="true"]:-moz-system-metric(windows-classic) {
 /* :::::: Close button icons ::::: */
 
 .close-icon {
-  list-style-image: url("chrome://global/skin/icons/close.svg");
+  list-style-image: url("chrome://global/skin/icons/close.svg#state");
   -moz-image-region: rect(0, 16px, 16px, 0);
 }
 
