@@ -4,7 +4,7 @@
 
 
 html {
-  background: #833;
+  background: #fff;
 }
 
 body {
@@ -16,25 +16,23 @@ body {
 
 h1 {
   margin: 0 0 .6em 0;
-  border-bottom: 1px solid ThreeDLightShadow;
-  font-size: 160%;
+  font-size: 200%;
+  font-weight: 500;
 }
 
 h2 {
   font-size: 130%;
+  font-weight: 600;
 }
 
 #errorPageContainer {
   position: relative;
   min-width: 13em;
   max-width: 52em;
-  margin: 4em auto;
-  border: 2px solid #DD0D09;
-  border-radius: 10px;
-  box-shadow: 0px 0px 8px red;
+  margin: 3em auto;
   padding: 3em;
   -moz-padding-start: 30px;
-  background: url("chrome://global/skin/icons/sslWarning.png") left 0 no-repeat -moz-Field;
+  background: url("chrome://global/skin/icons/sec-error.svg") left 0 no-repeat -moz-Field;
   background-origin: content-box;
 }
 
@@ -43,17 +41,19 @@ h2 {
 }
 
 #errorTitle {
-  -moz-margin-start: 80px;
+  -moz-margin-start: 110px;
+  color: #a90000;
 }
 
 #errorLongContent {
-  -moz-margin-start: 80px;
+  -moz-margin-start: 110px;
+  font-size: 130%;
 }
 
 .expander > button {
   -moz-padding-start: 20px;
   -moz-margin-start: -20px;
-  background: url("chrome://browser/skin/aboutCertError_sectionExpanded.png") left center no-repeat;
+  background: url("chrome://browser/skin/sectionExpanded.svg") left center no-repeat;
   border: none;
   font: inherit;
   color: inherit;
@@ -65,9 +65,13 @@ h2 {
 }
 
 .expander[collapsed] > button {
-  background-image: url("chrome://browser/skin/aboutCertError_sectionCollapsed.png");
+  background-image: url("chrome://browser/skin/sectionCollapsed.svg#state");
+}
+
+.expander > button:hover {
+  text-decoration: underline;
 }
 
 .expander[collapsed] > button:-moz-dir(rtl) {
-  background-image: url("chrome://browser/skin/aboutCertError_sectionCollapsed-rtl.png");
+  background-image: url("chrome://browser/skin/sectionCollapsed.svg#state-rtl");
 }

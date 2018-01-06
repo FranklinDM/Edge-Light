@@ -25,7 +25,7 @@ body {
 h1 {
   margin: 0 0 .6em 0;
   font-size: 200%;
-  font-weight: normal;
+  font-weight: 500;
 }
 
 ul, ol {
@@ -46,7 +46,7 @@ ul {
   position: relative;
   min-width: 13em;
   max-width: 52em;
-  margin: 4em auto;
+  margin: 3em auto;
   padding: 3em;
   -moz-padding-start: 30px;
   background: url("chrome://global/skin/icons/no-conn.svg") left 0 no-repeat transparent;
@@ -54,7 +54,7 @@ ul {
 }
 
 #errorPageContainer.certerror {
-  background-image: url("chrome://global/skin/icons/sslWarning.png");
+  background-image: url("chrome://global/skin/icons/sec-error.svg");
 }
 
 #errorPageContainer:-moz-dir(rtl) {
@@ -62,11 +62,11 @@ ul {
 }
 
 #errorTitle {
-  -moz-margin-start: 80px;
+  -moz-margin-start: 110px;
 }
 
 #errorLongContent {
-  -moz-margin-start: 80px;
+  -moz-margin-start: 110px;
 }
 
 #errorShortDesc > p {
@@ -78,7 +78,7 @@ ul {
 
 #errorLongDesc {
   -moz-padding-end: 3em;
-  font-size: 110%;
+  font-size: 130%;
 }
 
 #errorLongDesc > p {
@@ -86,7 +86,7 @@ ul {
 
 #errorTryAgain {
   margin-top: 2em;
-  -moz-margin-start: 80px;
+  -moz-margin-start: 110px;
 }
 
 #brand {
@@ -121,18 +121,12 @@ ul {
 }
 
 /* Custom styling for 'blacklist' error class */
-:root.blacklist #errorTitle, :root.blacklist #errorLongContent,
-:root.blacklist #errorShortDesc, :root.blacklist #errorLongDesc,
-:root.blacklist a {
-  color: white;
+:root.blacklist #errorTitle {
+  color: #a90000;
 }
 
 :root.blacklist #errorPageContainer {
-  background-image: url("chrome://global/skin/icons/blacklist_large.png");
-}
-
-:root.blacklist {
-  background: #722; /* dark red */
+  background-image: url("chrome://global/skin/icons/sec-error.svg")
 }
 
 :root.blacklist #errorTryAgain {

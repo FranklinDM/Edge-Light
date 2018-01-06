@@ -1,0 +1,21 @@
+<svg width="16" height="16" version="1.1" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style>
+  use:not(:target) {
+    display: none;
+  }
+
+  use {
+    fill: #000;
+  }
+</style>
+<defs>
+  <g id="button">
+    <path d="M 11.28308,8.0005543 4,15.283635 4.7163653,16 12.716,8.0003653 4.7163653,7.3066057e-4 4,0.71709611 11.28308,8.0001763 Z"/>
+  </g>
+  <g id="button-rtl">
+    <path d="M 5.43292,8.0005543 12.716,15.283635 11.999635,16 4,8.0003653 11.999635,7.3066057e-4 12.716,0.71709611 5.43292,8.0001763 Z"/>
+  </g>
+</defs>
+<use id="state"             xlink:href="#button"/>
+<use id="state-rtl"         xlink:href="#button-rtl"/>
+</svg>
