@@ -7,9 +7,7 @@
 /* header */
 
 #permissions-pagetitle {
-  font-size: 200%;
-  font-weight: bold;
-  padding-bottom: 0.5em;
+  padding-top: 1em;
 }
 
 /* sites box */
@@ -21,6 +19,10 @@
 
 #sites-filter {
   margin: 0;
+}
+
+#sites-reload {
+  margin: 3px 0;
 }
 
 #sites-list {
