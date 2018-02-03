@@ -643,11 +643,11 @@ menuitem.bookmark-item {
 /* ::::: primary toolbar buttons ::::: */
 
 .toolbarbutton-1 {
-  list-style-image: url("chrome://browser/skin/Toolbar.svg#state");
+  list-style-image: url("chrome://browser/skin/toolbar.svg#state");
 }
 
 toolbar[brighttext] .toolbarbutton-1 {
-  list-style-image: url("chrome://browser/skin/Toolbar.svg#state-inverted");
+  list-style-image: url("chrome://browser/skin/toolbar.svg#state-inverted");
 }
 
 .toolbarbutton-1[disabled=true] > .toolbarbutton-icon,
@@ -862,11 +862,11 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 }
 
 #home-button.bookmark-item {
-  list-style-image: url("chrome://browser/skin/Toolbar.svg#state");
+  list-style-image: url("chrome://browser/skin/toolbar.svg#state");
 }
 
 toolbar[brighttext] #home-button.bookmark-item {
-  list-style-image: url("chrome://browser/skin/Toolbar.svg#state-inverted");
+  list-style-image: url("chrome://browser/skin/toolbar.svg#state-inverted");
 }
 
 #home-button {
@@ -888,11 +888,11 @@ toolbar[brighttext] #home-button.bookmark-item {
 }
 
 #bookmarks-menu-button.bookmark-item {
-  list-style-image: url("chrome://browser/skin/Toolbar.svg#state");
+  list-style-image: url("chrome://browser/skin/toolbar.svg#state");
 }
 
 toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
-  list-style-image: url("chrome://browser/skin/Toolbar.svg#state-inverted");
+  list-style-image: url("chrome://browser/skin/toolbar.svg#state-inverted");
 }
 
 #print-button {
