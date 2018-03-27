@@ -24,6 +24,10 @@
   use[id$="-orange"] {
     fill: #DE6800;
   }
+  
+  use[id$="-active"] {
+    fill: #0078D7;
+  }
 </style>
 <defs>
  <g id="toolbar" transform="translate(0 -287.47)">
@@ -106,4 +110,5 @@
 <use id="state-hover"       xlink:href="#toolbar"/>
 <use id="state-yellow"      xlink:href="#toolbar"/>
 <use id="state-orange"      xlink:href="#toolbar"/>
+<use id="state-active"      xlink:href="#toolbar"/>
 </svg>

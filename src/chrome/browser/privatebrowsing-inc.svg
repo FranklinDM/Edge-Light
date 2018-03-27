@@ -1,0 +1,20 @@
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style>
+  use:not(:target) {
+    display: none;
+  }
+
+  use {
+    fill: #000;
+  }
+
+  use[id$="-inverted"] {
+    fill: #FFF;
+  }
+</style>
+<defs>
+    <path id="indicator" d="m 0,1.5 h 16 v 13 H 0 Z M 15,3.9687111 V 2.5 h -1.46875 z m 0,5 V 5.5 H 11.53125 Z M 10.53125,4.5 h 3.9375 l -2,-2 H 8.53125 Z M 9.4687502,4.5 7.46875,2.5 H 3.578125 l 2,2 z M 1,2.5 v 2 h 3.515625 l -2,-2 z M 8.46875,13.5 1,6.0312 V 9.9687111 L 4.53125,13.5 Z m -6.9375,-8 7.9999998,8 h 3.9843752 l -8,-8 z M 1,11.0312 V 13.5 H 3.46875 Z M 14.578125,13.5 H 15 V 10.0312 L 10.46875,5.5 H 6.578125 Z"/>
+</defs>
+<use id="state"               xlink:href="#indicator"/>
+<use id="state-inverted"      xlink:href="#indicator"/>
+</svg>
