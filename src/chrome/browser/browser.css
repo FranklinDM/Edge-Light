@@ -1501,31 +1501,22 @@ toolbar[brighttext] #star-button {
   -moz-padding-end: 3px;
 }
 
-.tabbrowser-tab:not([selected]):not(:-moz-lwtheme) {
+.tabbrowser-tab:not(:-moz-any([selected],:hover,:active,[beforehovered],[beforeselected],[last-visible-tab])):not(:-moz-lwtheme) {
   border-image: linear-gradient(transparent 15%, #7a7a7a 15%, #7a7a7a 85%, transparent 85%);
   border-image-slice: 1;
 }
 
 .tabbrowser-tab[last-visible-tab]:not([selected]):not(:-moz-lwtheme) {
-  border-image: linear-gradient(#7A7A7A 0%, #7A7A7A 100%);
-  border-image-slice: 1;
-}
-
-/* Override the default (globally-set) tab width values; increase
-   by 2px to compensate for the transparent outer border of the tabs */
-.tabbrowser-tab:not([pinned]) {
-  max-width: 200px;
-  min-width: 200px;
+  -moz-border-right-colors: var(#7A7A7A);	
 }
 
 .tabbrowser-tab:hover:not([selected]) {
-  border-image: linear-gradient(var(--tab-background-hover) 0%, var(--tab-background-hover) 100%) !important;
   background-color: var(--tab-background-hover);
+  -moz-border-right-colors: var(--tab-background-hover);
 }
 
-.tabbrowser-tab[beforehovered]:not([last-visible-tab]) {
-  border-image: linear-gradient(var(--tab-background-hover) 0%, var(--tab-background-hover) 100%) !important;
-  border-right-color: var(--tab-background-hover) !important;
+.tabbrowser-tab[beforehovered]:not([last-visible-tab]):not([beforeselected]) {
+  -moz-border-right-colors: var(--tab-background-hover);
 }
 
 .tabbrowser-tab:hover:not(:-moz-lwtheme):not([selected]) {
@@ -1538,13 +1529,18 @@ toolbar[brighttext] #star-button {
 
 .tabbrowser-tab[selected="true"] {
   background-color: var(--tab-background-selected);
-  border-image: linear-gradient(var(--tab-background-selected) 0%, var(--tab-background-selected) 100%) !important;
-  border-right-color: var(--tab-background-selected) !important;
+  -moz-border-right-colors: var(--tab-background-selected);
 }
 
 .tabbrowser-tab[beforeselected] {
-  border-image: linear-gradient(var(--tab-background-selected) 0%, var(--tab-background-selected) 100%) !important;
-  border-right-color: var(--tab-background-selected) !important;
+  -moz-border-right-colors: var(--tab-background-selected);
+}
+
+/* Override the default (globally-set) tab width values; increase
+   by 2px to compensate for the transparent outer border of the tabs */
+.tabbrowser-tab:not([pinned]) {
+  max-width: 200px;
+  min-width: 200px;
 }
 
 #TabsToolbar .toolbarbutton-1:not([disabled]):hover,
