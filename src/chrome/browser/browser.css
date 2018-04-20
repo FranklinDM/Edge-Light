@@ -181,12 +181,6 @@
   -moz-margin-start: .5em;
 }
 
-/* #main-window[privatebrowsingmode=temporary] #appmenu-button > .button-box > .button-menu-dropmarker {
-  list-style-image: url(privatebrowsing-inc.svg#state-inverted);
-  width: 16px;
-  height: 16px;
-}
- */
 .splitmenu-menuitem {
   -moz-margin-end: 1px;
   -moz-padding-end: 0.5em;
@@ -208,171 +202,14 @@
   opacity: .3;
 }
 
-#appmenuPrimaryPane {
-  -moz-border-end: 1px solid ThreeDShadow;
+#appmenu-popup {
+  -moz-appearance: none;
+  background: var(--toolbar-custom-color);
+  border: 1px solid ThreeDShadow;
 }
 
-@media (-moz-windows-default-theme) {
-  #appmenu-popup {
-    -moz-appearance: none;
-    background: white;
-    border: 1px solid ThreeDShadow;
-  }
-  #appmenuPrimaryPane {
-    background-color: rgba(255,255,255,0.5);
-    padding: 2px;
-    -moz-border-end: none;
-  }
-  #appmenuSecondaryPane {
-    background-color: #f1f5fb;
-    box-shadow: 1px 0 2px rgb(204,214,234) inset;
-    -moz-padding-start: 3px;
-    -moz-padding-end: 2px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
-  }
-  #appmenuSecondaryPane:-moz-locale-dir(rtl) {
-    box-shadow: -1px 0 2px rgb(204,214,234) inset;
-  }
-
-  #appmenuPrimaryPane menupopup {
-    -moz-appearance: none;
-    background-image: linear-gradient(to right, white 26px, ThreeDLightShadow 26px,
-                                      ThreeDLightShadow 27px, ThreeDHighlight 27px,
-                                      ThreeDHighlight 28px, white 28px);
-    border: 3px solid;
-    -moz-border-top-colors: ThreeDShadow white;
-    -moz-border-bottom-colors: ThreeDShadow white;
-    -moz-border-left-colors: ThreeDShadow white;
-    -moz-border-right-colors: ThreeDShadow white;
-  }
-
-  #appmenuSecondaryPane menupopup {
-    -moz-appearance: none;
-    background-image: linear-gradient(to right, #f1f5fb 26px, ThreeDLightShadow 26px,
-                                      ThreeDLightShadow 27px, ThreeDHighlight 27px,
-                                      ThreeDHighlight 28px, #f1f5fb 28px);
-    border: 3px solid;
-    -moz-border-top-colors: ThreeDShadow #f1f5fb;
-    -moz-border-bottom-colors: ThreeDShadow #f1f5fb;
-    -moz-border-left-colors: ThreeDShadow #f1f5fb;
-    -moz-border-right-colors: ThreeDShadow #f1f5fb;
-  }
-
-  #appmenuPrimaryPane menupopup:-moz-locale-dir(rtl) {
-    background-image: linear-gradient(to left, white 26px, ThreeDLightShadow 26px,
-                                      ThreeDLightShadow 27px, ThreeDHighlight 27px,
-                                      ThreeDHighlight 28px, white 28px);
-  }
-  #appmenuSecondaryPane menupopup:-moz-locale-dir(rtl) {
-    background-image: linear-gradient(to left, #f1f5fb 26px, ThreeDLightShadow 26px,
-                                      ThreeDLightShadow 27px, ThreeDHighlight 27px,
-                                      ThreeDHighlight 28px, #f1f5fb 28px);
-  }
-
-  /* Hi-DPI overrides of the menu backgrounds, to adjust where the gutter line falls */
-  @media (min-resolution: 1.25dppx) {
-    #appmenuPrimaryPane menupopup {
-      background-image: linear-gradient(to right, white 22.4px, ThreeDLightShadow 22.4px,
-                                        ThreeDLightShadow 23.2px, ThreeDHighlight 23.2px,
-                                        ThreeDHighlight 24px, white 24px);
-    }
-    #appmenuSecondaryPane menupopup {
-      background-image: linear-gradient(to right, #f1f5fb 22.4px, ThreeDLightShadow 22.4px,
-                                        ThreeDLightShadow 23.2px, ThreeDHighlight 23.2px,
-                                        ThreeDHighlight 24px, #f1f5fb 24px);
-    }
-    #appmenuPrimaryPane menupopup:-moz-locale-dir(rtl) {
-      background-image: linear-gradient(to left, white 22.4px, ThreeDLightShadow 22.4px,
-                                        ThreeDLightShadow 23.2px, ThreeDHighlight 23.2px,
-                                        ThreeDHighlight 24px, white 24px);
-    }
-    #appmenuSecondaryPane menupopup:-moz-locale-dir(rtl) {
-      background-image: linear-gradient(to left, #f1f5fb 22.4px, ThreeDLightShadow 22.4px,
-                                        ThreeDLightShadow 23.2px, ThreeDHighlight 23.2px,
-                                        ThreeDHighlight 24px, #f1f5fb 24px);
-    }
-  }
-
-  @media (min-resolution: 1.5dppx) {
-    #appmenuPrimaryPane menupopup {
-      background-image: linear-gradient(to right, white 20.6667px, ThreeDLightShadow 20.6667px,
-                                        ThreeDLightShadow 21.3333px, ThreeDHighlight 21.3333px,
-                                        ThreeDHighlight 22px, white 22px);
-    }
-    #appmenuSecondaryPane menupopup {
-      background-image: linear-gradient(to right, #f1f5fb 20.6667px, ThreeDLightShadow 20.6667px,
-                                        ThreeDLightShadow 21.3333px, ThreeDHighlight 21.3333px,
-                                        ThreeDHighlight 22px, #f1f5fb 22px);
-    }
-    #appmenuPrimaryPane menupopup:-moz-locale-dir(rtl) {
-      background-image: linear-gradient(to left, white 20.6667px, ThreeDLightShadow 20.6667px,
-                                        ThreeDLightShadow 21.3333px, ThreeDHighlight 21.3333px,
-                                        ThreeDHighlight 22px, white 22px);
-    }
-    #appmenuSecondaryPane menupopup:-moz-locale-dir(rtl) {
-      background-image: linear-gradient(to left, #f1f5fb 20.6667px, ThreeDLightShadow 20.6667px,
-                                        ThreeDLightShadow 21.3333px, ThreeDHighlight 21.3333px,
-                                        ThreeDHighlight 22px, #f1f5fb 22px);
-    }
-  }
-
-  @media (min-resolution: 2dppx) {
-    #appmenuPrimaryPane menupopup {
-      background-image: linear-gradient(to right, white 19.5px, ThreeDLightShadow 19.5px,
-                                        ThreeDLightShadow 20px, ThreeDHighlight 20px,
-                                        ThreeDHighlight 20.5px, white 20.5px);
-    }
-    #appmenuSecondaryPane menupopup {
-      background-image: linear-gradient(to right, #f1f5fb 19.5px, ThreeDLightShadow 19.5px,
-                                        ThreeDLightShadow 20px, ThreeDHighlight 20px,
-                                        ThreeDHighlight 20.5px, #f1f5fb 20.5px);
-    }
-    #appmenuPrimaryPane menupopup:-moz-locale-dir(rtl) {
-      background-image: linear-gradient(to left, white 19.5px, ThreeDLightShadow 19.5px,
-                                        ThreeDLightShadow 20px, ThreeDHighlight 20px,
-                                        ThreeDHighlight 20.5px, white 20.5px);
-    }
-    #appmenuSecondaryPane menupopup:-moz-locale-dir(rtl) {
-      background-image: linear-gradient(to left, #f1f5fb 19.5px, ThreeDLightShadow 19.5px,
-                                        ThreeDLightShadow 20px, ThreeDHighlight 20px,
-                                        ThreeDHighlight 20.5px, #f1f5fb 20.5px);
-    }
-  }
-
-  .appmenu-menuseparator {
-    -moz-appearance: none;
-    margin-top: 3px;
-    margin-bottom: 3px;
-    -moz-margin-start: 30px;
-    padding: 0;
-    border-top: 1px solid #d6e5f5;
-    border-bottom: none;
-  }
-
-  @media (min-resolution: 1.25dppx) {
-    .appmenu-menuseparator {
-      -moz-margin-start: 25px;
-    }
-  }
-  @media (min-resolution: 1.5dppx) {
-    .appmenu-menuseparator {
-      -moz-margin-start: 24px;
-    }
-  }
-  @media (min-resolution: 2dppx) {
-    .appmenu-menuseparator {
-      -moz-margin-start: 22px;
-    }
-  }
-
-  .appmenu-edit-button:not([disabled]):hover {
-    border: 1px solid #b8d6fb;
-    box-shadow: inset 0 0 1px white;
-    background: linear-gradient(#fafbfd, #ebf3fd);
-    transition: .2s ease-in;
-  }
+#appmenuPrimaryPane {
+  -moz-border-end: 1px solid ThreeDShadow;
 }
 
 #appmenuSecondaryPane-spacer {
@@ -1606,18 +1443,21 @@ toolbar[brighttext] #star-button {
                     radial-gradient(circle farthest-corner at 50% 3px, rgba(255,255,255,1) 3%, rgba(186,221,251,.75) 40%, rgba(127,179,255,.5) 80%, rgba(127,179,255,.25));
 }
 
-.tab-throbber,
 .tab-icon-image {
   width: 16px;
   height: 16px;
   list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.png");
-  -moz-margin-start: 2px;
-  -moz-margin-end: 3px;
+  -moz-margin-start: 5px;
+  -moz-margin-end: 7px;
 }
 
 .tab-throbber,
 .tab-throbber[progress] {
+  width: 20px;
+  height: 20px;
   list-style-image: url("chrome://browser/skin/tabbrowser/connecting.png");
+  -moz-margin-end: 5px;
+  -moz-margin-start: 3px;
 }
 
 @media (min-resolution: 1.1dppx) {
@@ -1627,10 +1467,14 @@ toolbar[brighttext] #star-button {
   }
 }
 
-.tab-throbber[pinned],
 .tab-icon-image[pinned] {
+  -moz-margin-start: 7px;
+  -moz-margin-end: 7px;
+}
+
+.tab-throbber[pinned] {
   -moz-margin-start: 5px;
-  -moz-margin-end: 5px;
+  -moz-margin-end: 5px;  
 }
 
 /* tabbrowser-tab focus ring */
@@ -3748,74 +3592,4 @@ html|*#gcli-output-frame {
 #restore-button:-moz-locale-dir(rtl),
 #close-button:-moz-locale-dir(rtl) {
   transform: scaleX(-1);
-}
-
-/* ::::: splitmenu highlight style that imitates Windows 7 start menu ::::: */
-@media (-moz-os-version: windows-vista) and (-moz-windows-default-theme),
-       (-moz-os-version: windows-win7) and (-moz-windows-default-theme) {
-  .splitmenu-menuitem,
-  .splitmenu-menu {
-    -moz-appearance: none;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    border: 1px solid transparent;
-  }
-  .splitmenu-menuitem {
-    -moz-margin-end: 0;
-  }
-  .splitmenu-menu {
-    -moz-margin-start: -1px;
-  }
-  .splitmenu-menuitem:-moz-locale-dir(ltr),
-  .splitmenu-menu:-moz-locale-dir(rtl) {
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
-  }
-  .splitmenu-menu:-moz-locale-dir(ltr),
-  .splitmenu-menuitem:-moz-locale-dir(rtl) {
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
-  }
-
-  .splitmenu-menuitem > .menu-text {
-    -moz-margin-start: 1px !important;
-    -moz-margin-end: 3px !important;
-  }
-  .splitmenu-menu > .menu-right {
-    -moz-margin-end: -3px;
-  }
-
-  .splitmenu-menuitem[iconic],
-  .splitmenu-menu[iconic] {
-    padding-bottom: 1px;
-  }
-  .splitmenu-menuitem[iconic] > .menu-iconic-left {
-    margin-top: -3px;
-    margin-bottom: -2px;
-    -moz-margin-start: -1px;
-  }
-  .splitmenu-menuitem[iconic] > .menu-iconic-text {
-    -moz-margin-start: 2px !important;
-    -moz-margin-end: 3px !important;
-  }
-  .splitmenu-menu[iconic] > .menu-right {
-    margin-top: -1px;
-  }
-
-  .splitmenu-menuitem[_moz-menuactive],
-  .splitmenu-menu[_moz-menuactive] {
-    background-color: transparent;
-    background-image: linear-gradient(#fafbfd, #ebf3fd);
-    border-color: #aeccf1;
-  }
-
-  .splitmenu-menuitem[disabled][_moz-menuactive],
-  .splitmenu-menu[disabled][_moz-menuactive] {
-    background-image: linear-gradient(#f8f9f9, #eaeaea);
-    border-color: #d8d7d7;
-  }
-
-  .splitmenu-menu[_moz-menuactive]:not(:hover):not([open]) {
-    background-image: none;
-  }
 }
