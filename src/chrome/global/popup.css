@@ -6,9 +6,9 @@
 
 /* ::::: Variables ::::: */
 .panel-arrowcontent {
-  --panel-arrowcontent-background: -moz-field;
-  --panel-arrowcontent-color: -moz-FieldText;
-  --panel-arrowcontent-border: 1px solid ThreeDShadow;
+  --panel-arrowcontent-background: #F2F2F2;
+  --panel-arrowcontent-color: #000;
+  --panel-arrowcontent-border: 1px solid #CCCCCC;
 }
 
 /* ::::: menupopup ::::: */
@@ -63,17 +63,9 @@ panel[type="arrow"][side="right"] {
   margin: 4px;
 }
 
-@media (-moz-os-version: windows-vista),
-       (-moz-os-version: windows-win7) {
-/* < Win8 */
-.panel-arrowcontent {
-  border-radius: 4px;
-}
-}
-
 .panel-arrow[side="top"],
 .panel-arrow[side="bottom"] {
-  list-style-image: url("chrome://global/skin/arrow/panelarrow-vertical-themed.svg");
+  list-style-image: url("chrome://global/skin/arrow/panelarrow-vertical.svg");
   position: relative;
   margin-left: 10px;
   margin-right: 10px;
@@ -90,7 +82,7 @@ panel[type="arrow"][side="right"] {
 
 .panel-arrow[side="left"],
 .panel-arrow[side="right"] {
-  list-style-image: url("chrome://global/skin/arrow/panelarrow-horizontal-themed.svg");
+  list-style-image: url("chrome://global/skin/arrow/panelarrow-horizontal.svg");
   position: relative;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -103,23 +95,6 @@ panel[type="arrow"][side="right"] {
 .panel-arrow[side="right"] {
   transform: scaleX(-1);
   margin-left: -5px;
-}
-
-@media (-moz-windows-default-theme) {
-  .panel-arrowcontent {
-    --panel-arrowcontent-border: 1px solid hsla(210,4%,10%,.2);
-    box-shadow: 0 0 4px hsla(210,4%,10%,.2);
-  }
-
-  .panel-arrow[side="top"],
-  .panel-arrow[side="bottom"] {
-    list-style-image: url("chrome://global/skin/arrow/panelarrow-vertical.svg");
-  }
-
-  .panel-arrow[side="left"],
-  .panel-arrow[side="right"] {
-    list-style-image: url("chrome://global/skin/arrow/panelarrow-horizontal.svg");
-  }
 }
 
 /* ::::: tooltip ::::: */
