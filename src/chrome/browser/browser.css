@@ -1180,7 +1180,7 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 }
 
 #page-proxy-favicon[pageproxystate="invalid"] {
-  width: 0;
+  list-style-image: url(chrome://browser/skin/identity-icons-info.svg);
 }
 
 /* autocomplete */
