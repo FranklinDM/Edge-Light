@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16">
+<style>
+  use:not(:target) {
+    display: none;
+  }
+
+  use {
+    fill: #000;
+  }
+
+  use[id$="-inverted"] {
+    fill: #FFF;
+  }
+</style>
+<defs>
+  <g id="plus">
+    <rect x="6" y="0" width="1" height="13"/>
+    <rect x="0" y="6" width="13" height="1"/>
+  </g>
+</defs>
+<use id="state"               xlink:href="#plus"/>
+<use id="state-inverted"      xlink:href="#plus"/>
+</svg>

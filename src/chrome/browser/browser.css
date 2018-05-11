@@ -1372,7 +1372,7 @@ toolbar[brighttext] #star-button {
 .tabbrowser-tab[beforeselected] {
   -moz-border-right-colors: var(--tab-background-selected);
 }
-
+	
 /* Override the default (globally-set) tab width values; increase
    by 2px to compensate for the transparent outer border of the tabs */
 .tabbrowser-tab:not([pinned]) {
@@ -1549,21 +1549,20 @@ toolbar[brighttext] .tabbrowser-arrowscrollbox > .scrollbutton-down {
 }
 
 .tabs-newtab-button > .toolbarbutton-icon {
-  margin-top: -1px;
-  margin-bottom: -1px;
+  margin: 5px 0 0 2px;
 }
 
-.tabs-newtab-button,
-#TabsToolbar > #new-tab-button,
-#TabsToolbar > toolbarpaletteitem > #new-tab-button {
-  list-style-image: url(chrome://browser/skin/tabbrowser/newtab.png);
+.tabs-newtab-button > .toolbarbutton-icon,
+#TabsToolbar > #new-tab-button > .toolbarbutton-icon,
+#TabsToolbar > toolbarpaletteitem > #new-tab-button > .toolbarbutton-icon {
+  list-style-image: url(chrome://browser/skin/tabbrowser/newtab.svg#state);
   -moz-image-region: auto;
 }
 
 .tabs-newtab-button:-moz-lwtheme-brighttext,
 #TabsToolbar[brighttext] > #new-tab-button,
 #TabsToolbar[brighttext] > toolbarpaletteitem > #new-tab-button {
-  list-style-image: url(chrome://browser/skin/tabbrowser/newtab-inverted.png);
+  list-style-image: url(chrome://browser/skin/tabbrowser/newtab.svg#state-inverted);
 }
 
 .tabs-newtab-button {
