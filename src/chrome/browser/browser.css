@@ -9,7 +9,7 @@
 @namespace html url("http://www.w3.org/1999/xhtml");
 
 :root {
-  --toolbar-custom-color: #F2F2F2;
+  --toolbar-custom-color: rgba(255,255,255,.75);
   --toolbar-highlight-top: rgba(255,255,255,.5);
   --toolbar-highlight-bottom: transparent;
   
@@ -20,7 +20,7 @@
   --toolbarbutton-border-color: hsla(210,54%,20%,.2);
   
   --tab-background: #F2F2F2;
-  --tab-background-hover: #e6e6e6;
+  --tab-background-hover: rgba(255,255,255,.5); 
   --tab-background-selected: var(--toolbar-custom-color);
 
   --tabstripbtn-background-hover: hsla(0, 0%, 0%, .17);
@@ -204,7 +204,7 @@
 
 #appmenu-popup {
   -moz-appearance: none;
-  background: var(--toolbar-custom-color);
+  background: #F2F2F2;
   border: 1px solid ThreeDShadow;
 }
 
