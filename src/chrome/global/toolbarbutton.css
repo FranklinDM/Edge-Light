@@ -57,7 +57,7 @@ toolbarbutton:not([disabled="true"]):-moz-any([open="true"], [checked="true"]) {
 }
 
 toolbar[orient="vertical"] toolbarbutton:not([disabled="true"]):-moz-any([open="true"], [checked="true"]) {
-  box-shadow: 0 -2px #0078D7 inset;
+  box-shadow: 2px 0 #0078D7 inset;
 }
 
 toolbarbutton[disabled="true"] {
