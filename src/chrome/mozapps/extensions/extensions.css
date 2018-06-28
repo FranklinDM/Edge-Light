@@ -286,6 +286,9 @@
 
 #header-search {
   margin: 0;
+  -moz-appearance: none;
+  border: 2px solid #CCCCCC;
+  background: #fff;
 }
 
 @media (max-width: 600px) {

@@ -73,9 +73,9 @@ colorpicker[type="button"] {
   background: #CCCCCC;
   background-clip: padding-box;
   border: 2px solid #CCCCCC;
-  transition: transform 200ms;
+  font-size: 15px;
 }
-  
+
 menulist {
   background: #fff;
 }
@@ -101,6 +101,11 @@ colorpicker[type="button"][disabled="true"] {
   color: #505050;
 }
 
+toolbarbutton:not([disabled="true"]):-moz-any([open="true"], [checked="true"]) {
+  box-shadow: none !important;
+  color: black !important;
+}
+
 toolbarbutton:hover,  
 *|button:hover,
 menulist:hover,
@@ -114,7 +119,6 @@ button:not([disabled="true"]):active:hover,
 colorpicker[type="button"][open="true"]:not([disabled="true"]) {
   background-color: #999999;
   border-color: #999999;
-  transform: skew(-2deg, 0deg) scaleX(.97);
 }
 
 button > .button-box {

@@ -11,6 +11,8 @@
  *              Henrik Skupin  <mozilla@hskupin.info>
  */
 
+@import url("chrome://global/skin/inContentUI.css");
+
 html {
   background: #fff;
 }
@@ -86,6 +88,7 @@ ul {
 
 #errorTryAgain {
   margin-top: 2em;
+  padding: 2px;
   -moz-margin-start: 110px;
 }
 
