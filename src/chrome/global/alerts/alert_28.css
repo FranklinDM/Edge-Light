@@ -1,0 +1,52 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* ===== alert.css =====================================================
+  == Styles specific to the alerts dialog.
+  ======================================================================= */
+
+@import url("chrome://global/skin/alerts/alert-common.css");
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#alertNotification {
+  -moz-appearance: none;
+  background: transparent;
+  padding: 8px 0;
+}
+
+#alertBox {
+  padding: 5px;
+  border: 1px solid #484848;
+  background-color: #1F1F1F;
+  color: #fff;
+}
+
+.alertCloseButton {
+  -moz-appearance: none;
+  padding: 4px 2px;
+}
+
+.alertCloseButton:not(:hover):not(:active) {
+  filter: invert(100%);
+}
+
+.alertCloseBox {
+  margin-inline-end: 2px;
+}
+
+#alertSettings {
+  margin-inline-end: 3px;
+}
+
+/* The close buttons are hidden by default in Win10 */
+#alertBox:hover .alertCloseBox,
+#alertBox:hover #alertSettings {
+  visibility: visible;
+}
+
+.alertCloseBox,
+#alertSettings {
+  visibility: hidden;
+}

@@ -9,7 +9,7 @@
 	<!-- Extension's info and metadata -->
 	<em:name>Edge Light</em:name>
 	<em:version>dev-build</em:version>
-	<em:description>.</em:description>
+	<em:description>Simple. Elegant. Touch-friendly (if you're using large icons).</em:description>
 	<em:creator>FranklinDM</em:creator>
 	<em:contributor>Microsoft</em:contributor>
 	<em:homepageURL>https://franklindm.github.io/</em:homepageURL>
@@ -26,7 +26,7 @@
       <Description>
 		<em:id>{8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}</em:id>
 		<em:minVersion>27.5.0</em:minVersion>
-		<em:maxVersion>27.*</em:maxVersion>
+		<em:maxVersion>28.*</em:maxVersion>
 	  </Description>
 	</em:targetApplication>
   </Description>
