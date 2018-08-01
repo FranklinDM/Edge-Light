@@ -60,7 +60,7 @@ panel[type="arrow"][side="right"] {
   background: var(--panel-arrowcontent-background);
   background-clip: padding-box;
   border: var(--panel-arrowcontent-border);
-  margin: 4px;
+  margin-top: 4px;
 }
 
 .panel-arrow[side="top"],
