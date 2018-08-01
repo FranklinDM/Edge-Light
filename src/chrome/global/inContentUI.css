@@ -41,6 +41,11 @@ html|html {
   transition: min-height 500ms;
 }
 
+#permissions-header > *,
+#header > * {
+  min-height: 32px;
+}
+
 @media (max-width: 750px) {
   #permissions-header,
   #header {
