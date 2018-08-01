@@ -6,23 +6,25 @@
   -moz-appearance: none;
   font-size: 75%;
   background-color: transparent;
+  --page-color: #F2F2F2;
+  --container-text-color: #000;
+  --container-border-color: #E1E1E1;
+  --container-background-color: #FFF;
 }
 
 /* SCROLLBOX */
+#newtab-vertical-margin,
 #newtab-scrollbox:not([page-disabled]) {
-  background-color: rgb(229,229,229);
-  background-image: url(chrome://browser/skin/newtab/noise.png),
-                    linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.2));
+  background-color: var(--page-color);
   background-attachment: fixed;
 }
 
 /* UNDO */
 #newtab-undo-container {
   padding: 4px 3px;
-  border: 1px solid;
-  border-color: rgba(8,22,37,.12) rgba(8,22,37,.14) rgba(8,22,37,.16);
-  background-color: rgba(255,255,255,.4);
-  color: #525e69;
+  border: 1px solid var(--container-border-color);
+  background-color: var(--container-background-color);
+  color: var(--container-text-color);
 }
 
 #newtab-undo-label {
@@ -32,8 +34,7 @@
 
 .newtab-undo-button {
   -moz-appearance: none;
-  color: -moz-nativehyperlinktext;
-  color: rgb(0,102,204);
+  color: var(--container-text-color);
   cursor: pointer;
   padding: 0;
   margin: 0 4px;
@@ -76,7 +77,7 @@
   height: 16px;
   padding: 0;
   border: none;
-  background: -216px 0 transparent url(chrome://browser/skin/newtab/controls.png);
+  background: -216px 0 transparent url(chrome://browser/skin/newtab/controls.svg);
 }
 
 #newtab-toggle[page-disabled] {
@@ -95,24 +96,20 @@
 /* CELLS */
 .newtab-cell {
   -moz-margin-end: 20px;
-  background-color: rgba(255,255,255,.2);
-  border: 1px solid;
-  border-color: rgba(8,22,37,.12) rgba(8,22,37,.14) rgba(8,22,37,.16);
-  border-radius: 1px;
-  transition: border-color 100ms ease-out;
+  background-color: var(--container-background-color);
+  border: 1px solid var(--container-border-color);
 }
 
 .newtab-cell:empty {
-  border: 1px dashed;
-  border-color: rgba(8,22,37,.15) rgba(8,22,37,.17) rgba(8,22,37,.19);
+  border: 1px dashed var(--container-border-color);
 }
 
 .newtab-cell:last-child {
   -moz-margin-end: 0;
 }
 
-.newtab-cell:hover:not(:empty):not([dragged]) {
-  border-color: rgba(8,22,37,.25) rgba(8,22,37,.27) rgba(8,22,37,.3);
+.newtab-cell:hover * {
+  text-decoration: underline;
 }
 
 /* SITES */
@@ -121,14 +118,13 @@
   transition-property: top, left, opacity, box-shadow, background-color;
 }
 
-.newtab-site:hover,
-.newtab-site[dragged] {
-  box-shadow: 0 0 10px rgba(8,22,37,.3);
+.newtab-site:hover .newtab-thumbnail {
+  filter: brightness(80%);
 }
 
 .newtab-site[dragged] {
   transition-property: box-shadow, background-color;
-  background-color: rgb(242,242,242);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .3);
 }
 
 /* THUMBNAILS */
@@ -142,9 +138,29 @@
 /* TITLES */
 .newtab-title {
   padding: 0 8px;
-  background-color: rgba(248,249,251,.95);
-  color: #1f364c;
+  background-color: var(--container-background-color);
+  color: var(--container-text-color);
+  font-size: 120%;
   line-height: 24px;
+}
+
+.newtab-site[pinned] .newtab-title {
+  -moz-padding-start: 20px;
+}
+
+.newtab-site[pinned] .newtab-title::before {
+  background-image: url(chrome://browser/skin/newtab/pinned.svg);
+  content: "";
+  left: 2px;
+  top: 2px;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+}
+
+.newtab-site[pinned] .newtab-title:dir(rtl)::before {
+  left: auto;
+  right: 2px;
 }
 
 /* CONTROLS */
@@ -153,37 +169,64 @@
   height: 24px;
   padding: 1px 2px 3px;
   border: none;
-  background: transparent url(chrome://browser/skin/newtab/controls.png);
+  background: transparent url(chrome://browser/skin/newtab/controls.svg);
+  transition: none;
 }
 
-.newtab-control-pin:hover {
-  background-position: -24px 0;
+.newtab-control-pin:dir(ltr),
+.newtab-control-block:dir(rtl) {
+  left: 4px;
+  top: 4px;
 }
 
-.newtab-control-pin:active {
-  background-position: -48px 0;
+.newtab-control-block:dir(ltr),
+.newtab-control-pin:dir(rtl) {
+  right: 4px;
+  top: 4px;
 }
 
+.newtab-site[pinned] .newtab-control-pin,
 .newtab-control-pin[pinned] {
   background-position: -72px 0;
-}
-
-.newtab-control-pin[pinned]:hover {
-  background-position: -96px 0;
-}
-
-.newtab-control-pin[pinned]:active {
-  background-position: -120px 0;
 }
 
 .newtab-control-block {
   background-position: -144px 0;
 }
 
-.newtab-control-block:hover {
-  background-position: -168px 0;
+#searchEngineLogo {
+  transform: scale(.75);
 }
 
-.newtab-control-block:active {
-  background-position: -192px 0;
+#searchLogoContainer[hidden] ~ #searchText {
+  -moz-padding-start: 8px;
+}
+
+#searchText {
+  -moz-box-flex: 1;
+  background: #fff padding-box;
+  border: 1px solid #CCCCCC !important;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+#searchSubmit {
+  -moz-margin-start: -5px;
+  background: #1E90FF padding-box;
+  padding: 0 9px;
+  border: 1px solid #CCCCCC !important;
+  border-radius: 0;
+  cursor: pointer;
+  transition: transform 100ms;
+  color: #fff;
+  box-shadow: none !important;
+}
+
+#searchSubmit:hover {
+  background: #61B1FF;
+}
+
+#searchSubmit:hover:active {
+  background: #1B81E5;
+  transform: skew(-2deg, 0deg) scaleX(.97);
 }
