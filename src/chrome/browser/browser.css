@@ -9,7 +9,7 @@
 @namespace html url("http://www.w3.org/1999/xhtml");
 
 :root {
-  --toolbar-custom-color: #F2F2F2;
+  --toolbar-custom-color: rgba(255, 255, 255, .75);
   --toolbar-border-color: #CCCCCC;
   
   --toolbarbutton-background-color: rgba(0,0,0,.1);
@@ -21,7 +21,7 @@
   --toolbarbutton-normal-padding: 12px 14px;
   --toolbarbutton-menu-padding: 12px 6px 12px 15px;
   
-  --tab-background-hover: #e6e6e6;
+  --tab-background-hover: rgba(255, 255, 255, .5); 
   --tab-background-selected: var(--toolbar-custom-color);
   --tab-separator-color: #7A7A7A;
 
@@ -30,24 +30,35 @@
 
   --tab-border-radius: 0px;
   --tab-height: 32px;
-
-  /* For Windows 10 only */
-  --window-active-background: #CCCCCC;
-  --window-active-color: #000;
-  --window-inactive-background: var(--window-active-background); /* hsl(0, 0%, 90%) */
-  --window-inactive-color: var(--window-active-color); /* ThreeDShadow */
   
   --window-text-color: currentColor;
 }
 
-toolbar[brighttext]:root
-:root:-moz-lwtheme-brighttext {
+@media (-moz-os-version: windows-win10) {
+  /* Don't change color when going inactive and use Edge's window color */
+  #main-window[chromemargin]:not(:-moz-lwtheme):root {
+    --window-active-background: #CCCCCC;
+    --window-active-color: #000;
+    --window-inactive-background: var(--window-active-background); /* hsl(0, 0%, 90%) */
+    --window-inactive-color: var(--window-active-color); /* ThreeDShadow */
+  }
+  /* Restore old behavior when titlebar is being shown */
+  #main-window:not([chromemargin]):not(:-moz-lwtheme):root {
+    --window-active-background: #fff;
+    --window-active-color: #000;
+    --window-inactive-background: hsl(0, 0%, 90%);
+    --window-inactive-color: ThreeDShadow;
+  }
+}
+
+:root:-moz-lwtheme-darktext {
   --toolbar-custom-color: rgba(255, 255, 255, .75);
   --tab-background-hover: rgba(255, 255, 255, .5);
 }
-:root:-moz-lwtheme-darktext {
-  --toolbar-custom-color: rgba(0, 0, 0, .75);
-  --tab-background-hover: rgba(0, 0, 0, .5); 
+toolbar[brighttext]:root,
+:root:-moz-lwtheme-brighttext {
+  --toolbar-custom-color: rgba(94, 94, 94, .45);
+  --tab-background-hover: rgba(0, 0, 0, .5);
 }
 
 #menubar-items {
@@ -75,7 +86,9 @@ toolbar[brighttext]:root
   border-bottom: 1px solid var(--toolbar-border-color);
 }
 
-#navigator-toolbox > #TabsToolbar[tabsontop="true"] {
+#navigator-toolbox > #toolbar-menubar,
+#navigator-toolbox > #TabsToolbar {
+  background-color: transparent;
   border-bottom-style: none;
 }
 
@@ -1262,7 +1275,7 @@ toolbar[brighttext] #star-button {
 
 #TabsToolbar {
   padding: 0;
-  min-height: var(--tab-height);
+  height: var(--tab-height);
 }
 
 /* Make sure the Navigation toolbar buttons are more or less
@@ -1276,6 +1289,7 @@ toolbar[brighttext] #star-button {
 /* Make sure the elements on the Tab bar are not "glued" ri?ht
    up against the AppMenu button / the caption when the tabs are
    on top and the window is unmaximized */ 
+#main-window[sizemode="normal"] #nav-bar[tabsontop=false],
 #main-window[sizemode="normal"] #TabsToolbar[tabsontop=true] {
   margin-top: 3px;
 }
@@ -1284,13 +1298,16 @@ toolbar[brighttext] #star-button {
 .tabs-newtab-button {
   -moz-appearance: none;
   background: transparent;
-  padding: 5px 3px 6px;
+  padding: 0 3px 0;
   margin: 0;
   border-width: 0 1px 0 0;
   border-style: solid;
   border-radius: var(--tab-border-radius) var(--tab-border-radius) 0px 0px;
   border-color: transparent;
   font-size: 105%;
+}
+
+.tab-content {
   min-height: var(--tab-height);
 }
 
@@ -1299,21 +1316,22 @@ toolbar[brighttext] #star-button {
 }
 
 .tabbrowser-tab:not([selected]):not(:-moz-any(:hover,:active)) > * {
-  opacity: .5;
+  opacity: .6;
 }
 
-.tabbrowser-tab:not(:-moz-any([selected],:hover,:active,[beforehovered],[beforeselected],[last-visible-tab])):not(:-moz-lwtheme) {
+.tabbrowser-tab:not(:-moz-any([selected],:hover,:active,[beforehovered],[beforeselected],[last-visible-tab])) {
   border-image: linear-gradient(transparent 20%, var(--tab-separator-color) 20%, var(--tab-separator-color) 80%, transparent 80%);
   border-image-slice: 1;
 }
 
-.tabbrowser-tab[last-visible-tab]:not([selected]):not(:-moz-lwtheme) {
-  -moz-border-right-colors: var(--tab-separator-color);
+.tabbrowser-tab[last-visible-tab]:not([selected]) {
+  border-image: linear-gradient(var(--tab-separator-color) 100%);
+  border-image-slice: 1;
 }
 
-.tabbrowser-tab:hover:not([selected]) {
+.tabbrowser-tab:hover:not([selected="true"]) {
   background-color: var(--tab-background-hover);
-  -moz-border-right-colors: var(--tab-background-hover);
+  -moz-border-right-colors: transparent;
 }
 
 .tabbrowser-tab[beforehovered]:not([last-visible-tab]):not([beforeselected]) {
@@ -1322,7 +1340,7 @@ toolbar[brighttext] #star-button {
 
 .tabbrowser-tab[selected="true"] {
   background-color: var(--tab-background-selected);
-  -moz-border-right-colors: var(--tab-background-selected);
+  -moz-border-right-colors: transparent;
 }
 
 .tabbrowser-tab[beforeselected] {
@@ -1332,7 +1350,7 @@ toolbar[brighttext] #star-button {
 #TabsToolbar[brighttext] .tabbrowser-tab:not(:-moz-any([selected], :hover, :active)) {
   color: #fff;
 }
-	
+
 #TabsToolbar .toolbarbutton-1:not([disabled]):hover,
 #TabsToolbar .toolbarbutton-1[open],
 #TabsToolbar .toolbarbutton-1 > .toolbarbutton-menubutton-button:not([disabled]):hover,
@@ -1461,16 +1479,8 @@ toolbar[brighttext] .tabbrowser-arrowscrollbox > .scrollbutton-down {
   transition: none;
 }
 
-.tabbrowser-arrowscrollbox > .scrollbutton-up {
-  margin-right: 2px;
-}
-
-.tabbrowser-arrowscrollbox > .scrollbutton-down {
-  margin-left: 2px;
-}
-
 .tabs-newtab-button > .toolbarbutton-icon {
-  margin: 5px 0 0 3px;
+  margin-left: 3px;
 }
 
 .tabs-newtab-button > .toolbarbutton-icon,
@@ -2958,6 +2968,11 @@ html|*#gcli-output-frame {
         background-color: hsla(0, 60%, 49%, 0.6);
         transition: none;
       }
+      /* Make toolbar color persistent and not fully transparent */
+      #main-window:not([chromemargin]):not(:-moz-lwtheme):root {
+        --toolbar-custom-color: rgba(237, 237, 237, .75);
+        --tab-background-hover: rgba(237, 237, 237, .5);
+      }
     }
     
     @media (-moz-windows-accent-color-applies) {
@@ -3400,11 +3415,6 @@ html|*#gcli-output-frame {
     position: relative;
   }
   
-  #main-window[sizemode=normal] #TabsToolbar[tabsontop=false] {
-    padding-left: 2px;
-    padding-right: 2px;
-  }
-
   /* Rounded corners for when chrome is disabled */
   #main-window[sizemode=normal][disablechrome] #navigator-toolbox[tabsontop=true]:not(:-moz-lwtheme)::after {
     visibility: visible;
