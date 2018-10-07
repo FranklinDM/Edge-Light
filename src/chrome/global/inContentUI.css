@@ -12,7 +12,7 @@
 /* Page background */
 *|*:root {
   -moz-appearance: none;
-  color: -moz-dialogText;
+  color: #000;
   background-color: #fff;
   font-family: "Segoe UI", sans-serif;
   --menu-hover: rgba(0,0,0,.1);
@@ -23,21 +23,12 @@ html|html {
   font: message-box;
 }
 
-/* Use the new in-content colors for #contentAreaDownloadsView. After landing
-   of bug 989469 the colors can be moved to *|*:root */
-*|*#contentAreaDownloadsView {
-  background: #f1f1f1;
-  color: #424e5a;
-}
-
 /* header */
 #permissions-header,
 #header {
   min-height: 56px;
   -moz-padding-start: 2em;
   -moz-padding-end: 2em;
-  background-color: #E6E6E6;
-  color: #000;
   transition: min-height 500ms;
 }
 
@@ -118,9 +109,9 @@ colorpicker[type="button"]:hover {
   border-color: #7A7A7A;
 }
 
-toolbarbutton:not([disabled="true"]):active:hover,
-html|button:not([disabled]):active:hover,
-button:not([disabled="true"]):active:hover,
+toolbarbutton:not(:-moz-any([disabled="true"],[open])):active:hover,
+html|button:not(:-moz-any([disabled],[open])):active:hover,
+button:not(:-moz-any([disabled="true"],[open])):active:hover,
 colorpicker[type="button"][open="true"]:not([disabled="true"]) {
   background-color: #999999;
   border-color: #999999;

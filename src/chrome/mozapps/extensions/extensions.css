@@ -105,9 +105,9 @@
 }
 
 .error-icon {
-  list-style-image: url("chrome://mozapps/skin/extensions/alerticon-error.png");
-  width: 16px;
-  height: 15px;
+  list-style-image: url("chrome://mozapps/skin/extensions/alerticon-error.png") !important;
+  width: 16px !important;
+  height: 15px !important;
   margin: 3px 0;
 }
 
@@ -175,7 +175,6 @@
 #categories {
   -moz-appearance: none;
   border: none;
-  background-color: #F2F2F2;
   position: relative;
   margin: 0;
 }
@@ -285,10 +284,19 @@
 /*** header ***/
 
 #header-search {
+  --inner-border-color: #fff;
   margin: 0;
   -moz-appearance: none;
-  border: 2px solid #CCCCCC;
+  border: 2px solid;
+  -moz-border-top-colors: #000 var(--inner-border-color);
+  -moz-border-bottom-colors: #000 var(--inner-border-color);
+  -moz-border-left-colors: #000 var(--inner-border-color);
+  -moz-border-right-colors: #000 var(--inner-border-color);
   background: #fff;
+}
+
+#header-search[focused] {
+  --inner-border-color: #000;
 }
 
 @media (max-width: 600px) {
@@ -321,8 +329,6 @@
   -moz-appearance: none;
   border: none;
   background-color: transparent;
-  color: #536680;
-  border-radius: 10000px;
   padding: 0 6px;
   margin: 0 6px;
   min-width: 12px !important;
@@ -334,10 +340,13 @@
   padding-bottom: 0;
 }
 
+.sorter:hover {
+  background-color: var(--menu-hover);
+}
+
 .sorter[checkState="1"],
 .sorter[checkState="2"] {
-  background-color: rgba(194, 200, 206, 0.4);
-  box-shadow: 1px 1px 2px #B6BBC4 inset;
+  background-color: var(--menu-active);
 }
 
 .sorter[checkState="1"] {
@@ -417,7 +426,7 @@
 }
 
 .icon {
-  list-style-image: url("chrome://mozapps/skin/extensions/extensionGeneric.png");
+  list-style-image: url("chrome://mozapps/skin/extensions/extensionGeneric.svg");
   max-width: 48px;
   max-height: 48px;
 }
@@ -442,13 +451,9 @@
   list-style-image: url("chrome://mozapps/skin/extensions/dictionaryGeneric.png");
 }
 
-.addon-view[type="experiment"] .icon {
-  list-style-image: url("chrome://mozapps/skin/extensions/experimentGeneric.png");
-}
-
 .name-container {
   font-size: 150%;
-  font-weight: bold;
+  font-weight: 600;
   color: #3F3F3F;
   margin-bottom: 0;
   -moz-box-align: end;
@@ -466,6 +471,7 @@
 .description-container {
   -moz-margin-start: 6px;
   -moz-box-align: center;
+  font-size: 120%;
 }
 
 .description {
@@ -573,7 +579,7 @@
   list-style-image: url("chrome://global/skin/arrow/arrow-up.gif");
 }
 
-.addon[active="false"] > * {
+.addon[active="false"] :-moz-any(.icon-container, .basicinfo-container, .description-outer-container) {
   opacity: .5;
 }
 
@@ -583,15 +589,13 @@
 }
 
 .addon-view[notification="warning"] {
-  background-image: url("chrome://mozapps/skin/extensions/stripes-warning.png"),
-                    linear-gradient(rgba(255, 255, 0, 0.04),
+  background-image: linear-gradient(rgba(255, 255, 0, 0.04),
                                     rgba(255, 255, 0, 0));
   background-repeat: repeat-x;
 }
 
 .addon-view[notification="error"] {
-  background-image: url("chrome://mozapps/skin/extensions/stripes-error.png"),
-                    linear-gradient(rgba(255, 0, 0, 0.04),
+  background-image: linear-gradient(rgba(255, 0, 0, 0.04),
                                     rgba(255, 0, 0, 0));
   background-repeat: repeat-x;
 }
@@ -599,16 +603,14 @@
 .addon-view[pending="enable"],
 .addon-view[pending="upgrade"],
 .addon-view[pending="install"] {
-  background-image: url("chrome://mozapps/skin/extensions/stripes-info-positive.png"),
-                    linear-gradient(rgba(0, 255, 0, 0.04),
+  background-image: linear-gradient(rgba(0, 255, 0, 0.04),
                                     rgba(0, 255, 0, 0));
   background-repeat: repeat-x;
 }
 
 .addon-view[pending="disable"],
 .addon-view[pending="uninstall"] {
-  background-image: url("chrome://mozapps/skin/extensions/stripes-info-negative.png"),
-                    linear-gradient(rgba(128, 128, 128, 0.04),
+  background-image: linear-gradient(rgba(128, 128, 128, 0.04),
                                     rgba(128, 128, 128, 0));
   background-repeat: repeat-x;
 }
@@ -850,8 +852,7 @@ setting {
 }
 
 #detail-view[active="false"]:not([pending]):not([notification]) {
-  background-image: linear-gradient(rgba(135, 135, 135, 0.1),
-                                    rgba(135, 135, 135, 0));
+  background-color: rgba(0, 0, 0, .05);
 }
 
 setting[first-row="true"] {
@@ -1101,6 +1102,21 @@ button.button-link:not([disabled="true"]):active:hover {
   background: transparent;
   border: none;
   box-shadow: none;
+}
+
+.header-button {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.header-button:hover:not(:-moz-any([open],[disabled])) {
+  background-color: var(--menu-hover);
+  border-color: var(--menu-hover);
+}
+
+.header-button[open]:not([disabled]) {
+  background-color: var(--menu-active);
+  border-color: var(--menu-active);
 }
 
 .header-button[disabled="true"] {
