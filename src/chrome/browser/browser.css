@@ -1301,10 +1301,21 @@ toolbar[brighttext] #star-button {
   padding: 0 3px 0;
   margin: 0;
   border-width: 0 1px 0 0;
-  border-style: solid;
   border-radius: var(--tab-border-radius) var(--tab-border-radius) 0px 0px;
-  border-color: transparent;
+  border-color: var(--tab-separator-color);
   font-size: 105%;
+}
+
+.tabs-newtab-button {
+  border-width: 0 1px;
+}
+
+/* Override global tab rule */
+.tabbrowser-tab[beforeselected]:-moz-locale-dir(ltr) {
+  border-right: 1px solid;
+}
+.tabbrowser-tab[last-tab] {
+  border-right-style: none;
 }
 
 .tab-content {
@@ -1319,34 +1330,14 @@ toolbar[brighttext] #star-button {
   opacity: .6;
 }
 
-.tabbrowser-tab:not(:-moz-any([selected],:hover,:active,[beforehovered],[beforeselected],[last-visible-tab])) {
-  border-image: linear-gradient(transparent 20%, var(--tab-separator-color) 20%, var(--tab-separator-color) 80%, transparent 80%);
-  border-image-slice: 1;
-}
-
-.tabbrowser-tab[last-visible-tab]:not([selected]) {
-  border-image: linear-gradient(var(--tab-separator-color) 100%);
-  border-image-slice: 1;
-}
-
 .tabbrowser-tab:hover:not([selected="true"]) {
   background-color: var(--tab-background-hover);
-  -moz-border-right-colors: transparent;
-}
-
-.tabbrowser-tab[beforehovered]:not([last-visible-tab]):not([beforeselected]) {
-  -moz-border-right-colors: var(--tab-background-hover);
 }
 
 .tabbrowser-tab[selected="true"] {
   background-color: var(--tab-background-selected);
-  -moz-border-right-colors: transparent;
 }
-
-.tabbrowser-tab[beforeselected] {
-  -moz-border-right-colors: var(--tab-background-selected);
-}
-
+ 
 #TabsToolbar[brighttext] .tabbrowser-tab:not(:-moz-any([selected], :hover, :active)) {
   color: #fff;
 }
@@ -1450,8 +1441,16 @@ toolbar[brighttext] #star-button {
   list-style-image: url("chrome://browser/skin/tabbrowser/tab-arrow-left.png");
   margin: 0;
   padding-right: 2px;
-  border-right: 2px solid transparent;
+  border-width: 0 1px;
+  border-style: solid;
+  border-color: var(--tab-separator-color);
   background-origin: border-box;
+}
+
+/* Prevent the tab list from being too flushed to the left when there are a lot of tabs */
+#main-window[sizemode="normal"] .tabbrowser-tabs[overflow][tabsontop="true"],
+.tabbrowser-tabs[overflow][tabsontop="false"] {
+  padding-left: 4px;
 }
 
 /* Prevent the icon from being vertically stretched when we unhide
