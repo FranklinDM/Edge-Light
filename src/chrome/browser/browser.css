@@ -787,10 +787,6 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
   -moz-image-region: rect(0, 342px, 18px, 324px);
 }
 
-#webrtc-status-button {
-  -moz-image-region: rect(0, 360px, 18px, 342px);
-}
-
 
 /* ::::: fullscreen window controls ::::: */
 
@@ -1052,22 +1048,6 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   list-style-image: url("chrome://browser/skin/actionicon-tab.png");
   -moz-image-region: rect(0, 16px, 11px, 0);
   padding: 0 3px;
-}
-
-@media not all and (-moz-os-version: windows-vista),
-       not all and (-moz-windows-default-theme) {
-  @media not all and (-moz-os-version: windows-win7),
-         not all and (-moz-windows-default-theme) {
-    richlistitem[type~="action"][actiontype$="tab"][selected="true"] > .ac-url-box > .ac-action-icon {
-      -moz-image-region: rect(11px, 16px, 22px, 0);
-    }
-
-    .ac-comment[selected="true"],
-    .ac-url-text[selected="true"],
-    .ac-action-text[selected="true"] {
-      color: inherit !important;
-    }
-  }
 }
 
 .autocomplete-treebody::-moz-tree-cell-text(treecolAutoCompleteComment) {
@@ -1789,22 +1769,12 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   list-style-image: url(chrome://global/skin/icons/question-64.png);
 }
 
-.popup-notification-icon[popupid="password-save"],
-.popup-notification-icon[popupid="password-change"] {
+.popup-notification-icon[popupid="password"] {
   list-style-image: url(chrome://mozapps/skin/passwordmgr/key-64.png);
-}
-
-.popup-notification-icon[popupid="webapps-install"] {
-  list-style-image: url(chrome://browser/skin/webapps-64.png);
 }
 
 .popup-notification-icon[popupid="mixed-content-blocked"] {
   list-style-image: url(chrome://browser/skin/mixed-content-blocked-64.png);
-}
-
-.popup-notification-icon[popupid="webRTC-sharingDevices"],
-.popup-notification-icon[popupid="webRTC-shareDevices"] {
-  list-style-image: url(chrome://browser/skin/webRTC-shareDevice-64.png);
 }
 
 .popup-notification-icon[popupid="pointerLock"] {
@@ -1866,10 +1836,6 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   list-style-image: url(chrome://mozapps/skin/passwordmgr/key-16.png);
 }
 
-#webapps-notification-icon {
-  list-style-image: url(chrome://browser/skin/webapps-16.png);
-}
-
 #plugins-notification-icon {
   list-style-image: url(chrome://browser/skin/notification-pluginNormal.png);
 }
@@ -1923,16 +1889,6 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 .mixed-content-blocked-notification-icon,
 #mixed-content-blocked-notification-icon {
   list-style-image: url(chrome://browser/skin/mixed-content-blocked-16.png);
-}
-
-.webRTC-shareDevices-notification-icon,
-#webRTC-shareDevices-notification-icon {
-  list-style-image: url(chrome://browser/skin/webRTC-shareDevice-16.png);
-}
-
-.webRTC-sharingDevices-notification-icon,
-#webRTC-sharingDevices-notification-icon {
-  list-style-image: url(chrome://browser/skin/webRTC-sharingDevice-16.png);
 }
 
 .web-notifications-notification-icon,
