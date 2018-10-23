@@ -1308,7 +1308,7 @@ toolbar[brighttext] #star-button {
 }
 
 .tabs-newtab-button {
-  border-width: 0 1px;
+  border-width: 0 0 0 1px;
 }
 
 /* Override global tab rule */
@@ -1324,7 +1324,7 @@ toolbar[brighttext] #star-button {
 }
 
 .tabbrowser-tab {
-  -moz-padding-end: 3px;
+  -moz-padding-end: 8px;
 }
 
 .tabbrowser-tab:not([selected]):not(:-moz-any(:hover,:active)) > * {
@@ -1441,17 +1441,7 @@ toolbar[brighttext] #star-button {
 .tabbrowser-arrowscrollbox > .scrollbutton-down {
   list-style-image: url("chrome://browser/skin/tabbrowser/tab-arrow-left.png");
   margin: 0;
-  padding-right: 2px;
-  border-width: 0 1px;
-  border-style: solid;
-  border-color: var(--tab-separator-color);
   background-origin: border-box;
-}
-
-/* Prevent the tab list from being too flushed to the left when there are a lot of tabs */
-#main-window[sizemode="normal"] .tabbrowser-tabs[overflow][tabsontop="true"],
-.tabbrowser-tabs[overflow][tabsontop="false"] {
-  padding-left: 4px;
 }
 
 /* Prevent the icon from being vertically stretched when we unhide
