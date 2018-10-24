@@ -1240,6 +1240,12 @@ toolbar[brighttext] #star-button {
   -moz-padding-start: 0px;
 }
 
+#sidebar-splitter {
+  border: none;
+  min-width: 1px;
+  background-color: var(--toolbar-border-color);
+}
+
 /* ::::: throbber ::::: */
 
 #navigator-throbber {
