@@ -523,12 +523,17 @@ toolbar[brighttext] .toolbarbutton-1 {
 
 .toolbarbutton-1 > .toolbarbutton-menu-dropmarker,
 .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
-  list-style-image: url("chrome://browser/skin/toolbarbutton-dropdown-arrow.png");
+  list-style-image: url("chrome://browser/skin/toolbarbutton-dropdown-arrow.svg#state");
+}
+
+.toolbarbutton-1:-moz-any(:hover:active, [open="true"]) > .toolbarbutton-menu-dropmarker,
+.toolbarbutton-1:-moz-any(:hover:active, [open="true"]) > .toolbarbutton-menubutton-dropmarker {
+  list-style-image: url("chrome://browser/skin/toolbarbutton-dropdown-arrow.svg#state-active");
 }
 
 toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menu-dropmarker,
 toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
-  list-style-image: url("chrome://browser/skin/toolbarbutton-dropdown-arrow-inverted.png");
+  list-style-image: url("chrome://browser/skin/toolbarbutton-dropdown-arrow.svg#state-inverted");
 }
 
 .toolbarbutton-1 > .toolbarbutton-icon,
@@ -2745,7 +2750,7 @@ toolbar[brighttext] #addonbar-closebutton {
   :-moz-any(#toolbar-menubar, #TabsToolbar[tabsontop=true], #nav-bar[tabsontop=false]) .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker:not(:-moz-lwtheme),
   #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child .toolbarbutton-1 > .toolbarbutton-menu-dropmarker:not(:-moz-lwtheme),
   #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker:not(:-moz-lwtheme) {
-    list-style-image: url("chrome://browser/skin/toolbarbutton-dropdown-arrow-inverted.png");
+    list-style-image: url("chrome://browser/skin/toolbarbutton-dropdown-arrow.svg#state-inverted");
   }
   
 /* Show toolbar borders on vista through win8, but not on win10 and later: */

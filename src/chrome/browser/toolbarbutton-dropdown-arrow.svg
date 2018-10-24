@@ -1,0 +1,30 @@
+<svg width="10" height="10" version="1.1" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style>
+  use:not(:target) {
+    display: none;
+  }
+
+  use {
+    fill: #000;
+  }
+
+  use[id$="-inverted"] {
+    fill: #fff;
+  }
+
+  use[id$="-hover"] {
+    fill: #919191;
+  }
+  
+  use[id$="-active"] {
+    fill: #0078D7;
+  }
+</style>
+<defs>
+ <path id="arrow" d="m5 6.8284 4.5522-4.5523.44776.4478-5 5-5-5 .44776-.4478z"/>
+</defs>
+<use id="state"             xlink:href="#arrow"/>
+<use id="state-inverted"    xlink:href="#arrow"/>
+<use id="state-hover"       xlink:href="#arrow"/>
+<use id="state-active"      xlink:href="#arrow"/>
+</svg>
