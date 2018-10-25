@@ -11,7 +11,7 @@
 }
 
 .findbar-closebutton:-moz-lwtheme-brighttext {
-  list-style-image: url("chrome://global/skin/icons/close-inverted.png");
+  list-style-image: url("chrome://global/skin/icons/close.svg#state-inverted");
 }
 
 findbar {

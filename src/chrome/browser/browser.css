@@ -1544,7 +1544,7 @@ toolbar[brighttext] #alltabs-button[type="menu"] {
 }
 
 toolbar[brighttext] .tabs-closebutton {
-  list-style-image: url("chrome://global/skin/icons/close-inverted.png");
+  list-style-image: url("chrome://global/skin/icons/close.svg#state-inverted");
 }
 
 .tabs-closebutton > .toolbarbutton-icon {
@@ -2119,7 +2119,7 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 }
 
 toolbar[brighttext] #addonbar-closebutton {
-  list-style-image: url("chrome://global/skin/icons/close-inverted.png");
+  list-style-image: url("chrome://global/skin/icons/close.svg#state-inverted");
 }
 
 /* Status panel */
