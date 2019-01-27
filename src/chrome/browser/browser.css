@@ -22,12 +22,11 @@
   --toolbarbutton-normal-padding: 12px 14px;
   --toolbarbutton-menu-padding: 12px 6px 12px 15px;
   
-  --tab-background-hover: rgba(255, 255, 255, .5); 
+  --tab-background-hover: rgba(255, 255, 255, .5);
   --tab-background-selected: var(--toolbar-custom-color);
   --tab-separator-color: #7A7A7A;
-
-  --tabstripbtn-background-hover: hsla(0, 0%, 0%, .17);
-  --tabstripbtn-background-active: hsla(0, 0%, 0%, .27);
+  
+  --urlbar-background-color: #fff;
 
   --tab-border-radius: 0px;
   --tab-height: 32px;
@@ -59,7 +58,15 @@
 toolbar[brighttext]:root,
 :root:-moz-lwtheme-brighttext {
   --toolbar-custom-color: rgba(94, 94, 94, .45);
-  --tab-background-hover: rgba(0, 0, 0, .5);
+  --toolbar-border-color: #000;
+  
+  --tab-background-hover: rgba(255, 255, 255, .05);
+  --tab-separator-color: #858585;
+  
+  --urlbar-background-color: var(--toolbar-custom-color);
+  
+  --toolbarbutton-background-color: rgba(255, 255, 255, .1);
+  --toolbarbutton-background-color-active: rgba(255, 255, 255, .2);
 }
 
 #menubar-items {
@@ -845,8 +852,8 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
   margin: 1px 3px;
   padding: 3px;
   background-clip: padding-box;
-  border: 1px solid #CCCCCC;
-  background: #FFFFFF;
+  border: 1px solid var(--toolbar-border-color);
+  background: var(--urlbar-background-color);
   font-size: 1.1em;
   min-height: 34px;
 }
@@ -866,11 +873,7 @@ html|*.urlbar-input::-moz-placeholder,
 html|*.urlbar-input:-moz-lwtheme-brighttext::-moz-placeholder,
 .searchbar-textbox:-moz-lwtheme-brighttext > .autocomplete-textbox-container > .textbox-input-box > html|*.textbox-input::-moz-placeholder {
   color: #fff;
-}
-
-#urlbar:-moz-lwtheme[focused="true"],
-.searchbar-textbox:-moz-lwtheme[focused="true"] {
-  background-color: white;
+  opacity: .8;
 }
 
 #urlbar-container {
@@ -1338,13 +1341,13 @@ toolbar[brighttext] #star-button {
 #TabsToolbar .toolbarbutton-1[open],
 #TabsToolbar .toolbarbutton-1 > .toolbarbutton-menubutton-button:not([disabled]):hover,
 .tabs-newtab-button:hover {
-  background-color: var(--tabstripbtn-background-hover);
+  background-color: var(--toolbarbutton-background-color);
 }
 
 #TabsToolbar .toolbarbutton-1:not([disabled]):hover:active,
 #TabsToolbar .toolbarbutton-1 > .toolbarbutton-menubutton-button:not([disabled]):hover:active,
 .tabs-newtab-button:hover:active:not([selected="true"]) {
-  background-color: var(--tabstripbtn-background-active);
+  background-color: var(--toolbarbutton-background-color-active);
 }
 
 .tabbrowser-tab:-moz-lwtheme {
@@ -2950,9 +2953,9 @@ toolbar[brighttext] #addonbar-closebutton {
   -moz-image-region: rect(18px, 270px, 36px, 252px);
 }
 
-toolbar[brighttext] #toolbar-appmenu-button > .toolbarbutton-icon,
-toolbar[brighttext] #appmenu-toolbar-button > .toolbarbutton-icon,
-toolbar[brighttext] #toolbarize-menu-button-toolbar-button > .toolbarbutton-icon {
+toolbar[brighttext] #toolbar-appmenu-button:not([open]) > .toolbarbutton-icon,
+toolbar[brighttext] #appmenu-toolbar-button:not([open]) > .toolbarbutton-icon,
+toolbar[brighttext] #toolbarize-menu-button-toolbar-button:not([open]) > .toolbarbutton-icon {
   list-style-image: url("chrome://browser/skin/toolbar.svg#state-inverted");
 }
 
