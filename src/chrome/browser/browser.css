@@ -520,7 +520,13 @@ toolbar[brighttext] .toolbarbutton-1 {
   list-style-image: url("chrome://browser/skin/toolbar.svg#state-active");
 }
 
+/* Use vertical style for menus */
+.toolbarbutton-1[type="menu"]:not(:-moz-any(#back-button, #forward-button, #feed-button)) {
+  -moz-binding: url("chrome://global/content/bindings/toolbarbutton.xml#menu-vertical");
+}
+
 .toolbarbutton-1[disabled=true] > .toolbarbutton-icon,
+.toolbarbutton-1[disabled=true] > hbox > .toolbarbutton-menu-dropmarker,
 .toolbarbutton-1[disabled=true] > .toolbarbutton-menu-dropmarker,
 .toolbarbutton-1[disabled=true] > .toolbarbutton-menubutton-dropmarker,
 .toolbarbutton-1[disabled=true] > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
@@ -528,16 +534,19 @@ toolbar[brighttext] .toolbarbutton-1 {
   opacity: .4;
 }
 
+.toolbarbutton-1 > hbox > .toolbarbutton-menu-dropmarker,
 .toolbarbutton-1 > .toolbarbutton-menu-dropmarker,
 .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
   list-style-image: url("chrome://browser/skin/toolbarbutton-dropdown-arrow.svg#state");
 }
 
+.toolbarbutton-1:-moz-any(:hover:active, [open="true"]) > hbox > .toolbarbutton-menu-dropmarker,
 .toolbarbutton-1:-moz-any(:hover:active, [open="true"]) > .toolbarbutton-menu-dropmarker,
 .toolbarbutton-1:-moz-any(:hover:active, [open="true"]) > .toolbarbutton-menubutton-dropmarker {
   list-style-image: url("chrome://browser/skin/toolbarbutton-dropdown-arrow.svg#state-active");
 }
 
+toolbar[brighttext] .toolbarbutton-1 > hbox > .toolbarbutton-menu-dropmarker,
 toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menu-dropmarker,
 toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
   list-style-image: url("chrome://browser/skin/toolbarbutton-dropdown-arrow.svg#state-inverted");
