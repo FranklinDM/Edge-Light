@@ -2,14 +2,14 @@
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
   <Description about="urn:mozilla:install-manifest">
 	<!-- Extension's ID and type -->
-	<em:id>edge-light@franklindm</em:id>
+	<em:id>edge@franklindm</em:id>
 	<!-- Types: 2=Extensions, 4=Themes, 8=Locale, 16=Plugin, 32=Multiple Item Package -->
 	<em:type>4</em:type>
 
 	<!-- Extension's info and metadata -->
 	<em:name>Edge Light</em:name>
 	<em:version>dev-build</em:version>
-	<em:description>Simple. Elegant. Touch-friendly (if you're using large icons).</em:description>
+	<em:description>Simple, modern, touch-friendly.</em:description>
 	<em:creator>FranklinDM</em:creator>
 	<em:contributor>Microsoft</em:contributor>
 	<em:homepageURL>https://franklindm.github.io/</em:homepageURL>
